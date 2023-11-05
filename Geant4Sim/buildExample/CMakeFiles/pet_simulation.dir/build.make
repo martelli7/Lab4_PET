@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/local1/Documents/pet_labnuc_sim_rev1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/local1/Documents/pet_labnuc_sim_rev1/build7
+CMAKE_BINARY_DIR = /home/local1/Documents/pet_labnuc_sim_rev1/buildExample
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pet_simulation.dir/depend.make
@@ -72,7 +72,7 @@ include CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/pet_simulation.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/pet_simulation.cc.o: ../pet_simulation.cc
 CMakeFiles/pet_simulation.dir/pet_simulation.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pet_simulation.dir/pet_simulation.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pet_simulation.dir/pet_simulation.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/pet_simulation.cc.o -MF CMakeFiles/pet_simulation.dir/pet_simulation.cc.o.d -o CMakeFiles/pet_simulation.dir/pet_simulation.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/pet_simulation.cc
 
 CMakeFiles/pet_simulation.dir/pet_simulation.cc.i: cmake_force
@@ -86,7 +86,7 @@ CMakeFiles/pet_simulation.dir/pet_simulation.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/action.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/action.cc.o: ../src/action.cc
 CMakeFiles/pet_simulation.dir/src/action.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pet_simulation.dir/src/action.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pet_simulation.dir/src/action.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/action.cc.o -MF CMakeFiles/pet_simulation.dir/src/action.cc.o.d -o CMakeFiles/pet_simulation.dir/src/action.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/action.cc
 
 CMakeFiles/pet_simulation.dir/src/action.cc.i: cmake_force
@@ -100,7 +100,7 @@ CMakeFiles/pet_simulation.dir/src/action.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/construction.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/construction.cc.o: ../src/construction.cc
 CMakeFiles/pet_simulation.dir/src/construction.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pet_simulation.dir/src/construction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pet_simulation.dir/src/construction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/construction.cc.o -MF CMakeFiles/pet_simulation.dir/src/construction.cc.o.d -o CMakeFiles/pet_simulation.dir/src/construction.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/construction.cc
 
 CMakeFiles/pet_simulation.dir/src/construction.cc.i: cmake_force
@@ -114,7 +114,7 @@ CMakeFiles/pet_simulation.dir/src/construction.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/detector.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/detector.cc.o: ../src/detector.cc
 CMakeFiles/pet_simulation.dir/src/detector.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pet_simulation.dir/src/detector.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pet_simulation.dir/src/detector.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/detector.cc.o -MF CMakeFiles/pet_simulation.dir/src/detector.cc.o.d -o CMakeFiles/pet_simulation.dir/src/detector.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/detector.cc
 
 CMakeFiles/pet_simulation.dir/src/detector.cc.i: cmake_force
@@ -128,7 +128,7 @@ CMakeFiles/pet_simulation.dir/src/detector.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/event.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/event.cc.o: ../src/event.cc
 CMakeFiles/pet_simulation.dir/src/event.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pet_simulation.dir/src/event.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pet_simulation.dir/src/event.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/event.cc.o -MF CMakeFiles/pet_simulation.dir/src/event.cc.o.d -o CMakeFiles/pet_simulation.dir/src/event.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/event.cc
 
 CMakeFiles/pet_simulation.dir/src/event.cc.i: cmake_force
@@ -142,7 +142,7 @@ CMakeFiles/pet_simulation.dir/src/event.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/generator.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/generator.cc.o: ../src/generator.cc
 CMakeFiles/pet_simulation.dir/src/generator.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pet_simulation.dir/src/generator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pet_simulation.dir/src/generator.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/generator.cc.o -MF CMakeFiles/pet_simulation.dir/src/generator.cc.o.d -o CMakeFiles/pet_simulation.dir/src/generator.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/generator.cc
 
 CMakeFiles/pet_simulation.dir/src/generator.cc.i: cmake_force
@@ -156,7 +156,7 @@ CMakeFiles/pet_simulation.dir/src/generator.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/physics.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/physics.cc.o: ../src/physics.cc
 CMakeFiles/pet_simulation.dir/src/physics.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pet_simulation.dir/src/physics.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pet_simulation.dir/src/physics.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/physics.cc.o -MF CMakeFiles/pet_simulation.dir/src/physics.cc.o.d -o CMakeFiles/pet_simulation.dir/src/physics.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/physics.cc
 
 CMakeFiles/pet_simulation.dir/src/physics.cc.i: cmake_force
@@ -170,7 +170,7 @@ CMakeFiles/pet_simulation.dir/src/physics.cc.s: cmake_force
 CMakeFiles/pet_simulation.dir/src/run.cc.o: CMakeFiles/pet_simulation.dir/flags.make
 CMakeFiles/pet_simulation.dir/src/run.cc.o: ../src/run.cc
 CMakeFiles/pet_simulation.dir/src/run.cc.o: CMakeFiles/pet_simulation.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pet_simulation.dir/src/run.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/pet_simulation.dir/src/run.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pet_simulation.dir/src/run.cc.o -MF CMakeFiles/pet_simulation.dir/src/run.cc.o.d -o CMakeFiles/pet_simulation.dir/src/run.cc.o -c /home/local1/Documents/pet_labnuc_sim_rev1/src/run.cc
 
 CMakeFiles/pet_simulation.dir/src/run.cc.i: cmake_force
@@ -259,7 +259,7 @@ pet_simulation: /usr/local/geant4.11.1.1/lib64/libG4global.so
 pet_simulation: /usr/local/geant4.11.1.1/lib64/libG4ptl.so.2.3.3
 pet_simulation: /usr/local/clhep/2.4.6.2/lib/libCLHEP-2.4.6.2.so
 pet_simulation: CMakeFiles/pet_simulation.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable pet_simulation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable pet_simulation"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pet_simulation.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -271,6 +271,6 @@ CMakeFiles/pet_simulation.dir/clean:
 .PHONY : CMakeFiles/pet_simulation.dir/clean
 
 CMakeFiles/pet_simulation.dir/depend:
-	cd /home/local1/Documents/pet_labnuc_sim_rev1/build7 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/pet_labnuc_sim_rev1 /home/local1/Documents/pet_labnuc_sim_rev1 /home/local1/Documents/pet_labnuc_sim_rev1/build7 /home/local1/Documents/pet_labnuc_sim_rev1/build7 /home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles/pet_simulation.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/local1/Documents/pet_labnuc_sim_rev1/buildExample && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/pet_labnuc_sim_rev1 /home/local1/Documents/pet_labnuc_sim_rev1 /home/local1/Documents/pet_labnuc_sim_rev1/buildExample /home/local1/Documents/pet_labnuc_sim_rev1/buildExample /home/local1/Documents/pet_labnuc_sim_rev1/buildExample/CMakeFiles/pet_simulation.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pet_simulation.dir/depend
 

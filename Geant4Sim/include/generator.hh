@@ -23,7 +23,7 @@ class MyPrimaryGenerator : public G4VUserPrimaryGeneratorAction
     private:
         G4ParticleGun *fParticleGun;
 
-		G4GenericMessenger *fMessenger;
+		G4GenericMessenger *fMessenger2;
 
 		G4double rhoS, alphaS;
 };

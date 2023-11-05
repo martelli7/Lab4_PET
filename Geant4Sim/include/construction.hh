@@ -42,10 +42,10 @@ class MyDetectorConstruction : public G4VUserDetectorConstruction
 		//This method is invoked from RunManager->Initialize(), so for us from macro command /run/initialize. It returns the pointer to the SENSITIVE VOLUME
 		virtual void ConstructSDandField();
 
-		G4GenericMessenger *fMessenger;  
+		G4GenericMessenger *fMessenger, *fMessenger1;  
 
 		G4double xWorld, yWorld, zWorld;
-		G4double rhoD, alphaD;
+		G4double rhoD, alphaD, gammaD;
 
 		G4bool is2DPET;
 };

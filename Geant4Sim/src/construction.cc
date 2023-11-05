@@ -2,6 +2,8 @@
 
 MyDetectorConstruction::MyDetectorConstruction()
 {
+	//Definition of the MESSENGERS for changing same important parameters!!!
+
   	fMessenger = new G4GenericMessenger(this, "/disk/", "Disk Construction");
 
 	fMessenger->DeclareProperty("rhoD", rhoD, "Plastic disk coordinate rho with respect negative z axis, insert negative values [mm]");
@@ -9,7 +11,13 @@ MyDetectorConstruction::MyDetectorConstruction()
 	fMessenger->DeclareProperty("alphaD", alphaD, "Plastic disk coordinate alpha with respect positive y axis, insert positive values [deg]");
 	
 	rhoD = -111.;  //Real experiment: -111.0*mm
-	alphaD = 0.; //Real experiment: 225.0*deg
+	alphaD = 0.; //Real experiment: 225.0*deg (rest rotating plate)
+
+	fMessenger1 = new G4GenericMessenger(this, "/detector/", "Spectrometer Construction");
+
+	fMessenger1->DeclareProperty("gammaD", gammaD, "Spectrometer coordinate gamma with respect positive y axis, insert positive values [deg]");
+	
+	gammaD = 0.; //Real experiment: between -30 deg and + 30 deg
 
 	//Let's call DefineMaterials() method
 	DefineMaterials();
@@ -105,9 +113,13 @@ void MyDetectorConstruction::Construct2DPET()
 										 true); //check overlaps
 
 	//2. the SPECTROMETER
-	physScintillatorSpect = new G4PVPlacement(0, //rotation
- 			   G4ThreeVector(0., 0., -198.7*mm), //position coordinates
- 							  logicScintillator, //logical volume
+
+	G4Rotate3D rotSY(gammaD*deg, G4ThreeVector(0.,1.,0.));
+	G4Translate3D tranSZ(G4ThreeVector(0., 0., -198.7*mm));
+	G4Transform3D transformSpct = (rotSY)*(tranSZ);
+
+	physScintillatorSpect = new G4PVPlacement(transformSpct, //rotation and position				  
+							  logicScintillator, //logical volume
  							 "physScintillator", //name
  									 logicWorld, //logical mother volume
  										  false, //no boolean operator

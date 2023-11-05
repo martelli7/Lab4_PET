@@ -8,14 +8,14 @@
 
 MyPrimaryGenerator::MyPrimaryGenerator()
 {	
-	fMessenger = new G4GenericMessenger(this, "/source/", "Generator Construction");
+	fMessenger2 = new G4GenericMessenger(this, "/source/", "Generator Construction");
 
-	fMessenger->DeclareProperty("rhoS", rhoS, "Na22 source coordinate rho with respect negative z axis, insert negative values [mm]");
+	fMessenger2->DeclareProperty("rhoS", rhoS, "Na22 source coordinate rho with respect negative z axis, insert negative values [mm]");
 
-	fMessenger->DeclareProperty("alphaS", alphaS, "Na22 source coordinate alpha with respect positive y axis, insert positive values [deg]");
+	fMessenger2->DeclareProperty("alphaS", alphaS, "Na22 source coordinate alpha with respect positive y axis, insert positive values [deg]");
 	
 	rhoS = -111.;  //Real experiment: -111.0*mm
-	alphaS = 0.; //Real experiment: 225.0*deg
+	alphaS = 0.; //Real experiment: 225.0*deg (rest rotating plate)
 	
 	fParticleGun = new G4ParticleGun(1); //Number of particle
     
@@ -55,7 +55,7 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 		G4PrimaryVertex* vertex = new G4PrimaryVertex(G4ThreeVector(rhoS*cos(alphaS*deg)*mm, //x
 							  						0, //y
 							 rhoS*sin(alphaS*deg)*mm), //z
-													0); //t
+												   0); //t
 
 		auto Na22 = new G4PrimaryParticle(ion); 
 

@@ -1,4 +1,0 @@
-/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles/rebuild_cache.dir
-/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles/edit_cache.dir
-/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles/pet_simulation.dir
-/home/local1/Documents/pet_labnuc_sim_rev1/build7/CMakeFiles/Simulation.dir
