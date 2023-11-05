@@ -1,0 +1,6 @@
+#/detector/rhoD {rhoDisk}
+
+/disk/alphaD {alphadisk}
+/source/alphaS {alphasource}
+/run/reinitializeGeometry
+/run/beamOn 10
