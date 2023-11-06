@@ -10,11 +10,11 @@
 class MyActionInitialization : public G4VUserActionInitialization
 {
     public:
-		MyActionInitialization();
-		~MyActionInitialization();
+	MyActionInitialization();
+	~MyActionInitialization();
 		
 
-		//This method is invoked from G4RunManager for sequential execution
+	//This method is invoked from G4RunManager for sequential execution
     	virtual void Build() const;
 };
 
