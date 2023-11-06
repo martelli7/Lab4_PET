@@ -30,3 +30,7 @@
    root output0.root
    new TBrowser
    ```
+## Credits
+All the codes in this repository were created for the _Nuclear and Subnuclear Measurements Laboratory course_ of the Physics Master degree of the _University of Milano-Bicocca_, 2022/2023 Academic Year.
+
+All credits go to Alessandro Lazzaroni, [Mattia Martelli](https://github.com/martelli7), Francesco Merighi and Beatrice Scotti.
