@@ -19,22 +19,22 @@ MyPrimaryGenerator::MyPrimaryGenerator()
 	
 	fParticleGun = new G4ParticleGun(1); //Number of particle
     
-    G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
-    G4ParticleDefinition *particle = particleTable->FindParticle("geantino");
-    //geantino is a "placeholder" particle
-    //if not overwritten by a particular particle, it will get the nucleus defined later
-
-    G4ThreeVector pos(0.,0.,0.);//Particle position
-    G4ThreeVector mom(0.,0.,0.);//Particle momentum
-    fParticleGun->SetParticlePosition(pos);
-    fParticleGun->SetParticleMomentumDirection(mom);
-    fParticleGun->SetParticleMomentum(0.*GeV);
-    fParticleGun->SetParticleDefinition(particle);
+	G4ParticleTable *particleTable = G4ParticleTable::GetParticleTable();
+	G4ParticleDefinition *particle = particleTable->FindParticle("geantino");
+	//geantino is a "placeholder" particle
+	//if not overwritten by a particular particle, it will become the nucleus defined later
+	
+	G4ThreeVector pos(0.,0.,0.); //Particle position
+	G4ThreeVector mom(0.,0.,0.); //Particle momentum direction
+	fParticleGun->SetParticlePosition(pos);
+	fParticleGun->SetParticleMomentumDirection(mom);
+	fParticleGun->SetParticleMomentum(0.*GeV);
+	fParticleGun->SetParticleDefinition(particle);
 }
 
 MyPrimaryGenerator::~MyPrimaryGenerator()
 {
-    delete fParticleGun;
+    	delete fParticleGun;
 }
 
 //Particle definition
@@ -44,8 +44,9 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 
 	if(particle == G4Geantino::Geantino())
 	{
+		//Definition of Na22
 		G4int Z = 11;
-	    G4int A = 22;
+	   	G4int A = 22;
 			
 		G4double charge = 0.*eplus;
 		G4double energy = 0.*keV;	
@@ -53,16 +54,18 @@ void MyPrimaryGenerator::GeneratePrimaries(G4Event *anEvent)
 		G4ParticleDefinition *ion = G4IonTable::GetIonTable()->GetIon(Z, A, energy);	
 
 		G4PrimaryVertex* vertex = new G4PrimaryVertex(G4ThreeVector(rhoS*cos(alphaS*deg)*mm, //x
-							  						0, //y
-							 rhoS*sin(alphaS*deg)*mm), //z
-												   0); //t
+							  	0, //y
+								rhoS*sin(alphaS*deg)*mm), //z
+								0); //t
 
 		auto Na22 = new G4PrimaryParticle(ion); 
 
-		Na22->SetMomentumDirection(G4ThreeVector(0,0,0));
-		Na22->SetTotalEnergy(0.);
-	    vertex->SetPrimary(Na22); 
+		Na22->SetMomentumDirection(G4ThreeVector(0,0,0)); //particle momentum direction
+		Na22->SetTotalEnergy(0.); //particle kinetic energy
+
+		//Definition of the Primary Vertex
+	    	vertex->SetPrimary(Na22); 
 					
-	    anEvent->AddPrimaryVertex(vertex); 
+	    	anEvent->AddPrimaryVertex(vertex); 
 	}
 }
