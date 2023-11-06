@@ -19,35 +19,35 @@
 class MyDetectorConstruction : public G4VUserDetectorConstruction
 {
     public:
-		MyDetectorConstruction();
-		~MyDetectorConstruction();
+	MyDetectorConstruction();
+	~MyDetectorConstruction();
 
-		//This method is invoked from RunManager->Initialize(), so for us from macro command /run/initialize. It returns the pointer to the WORLD VOLUME
-		virtual G4VPhysicalVolume *Construct();
+	//This method is invoked from RunManager->Initialize(), so for us from macro command /run/initialize. It returns the pointer to the WORLD VOLUME
+	virtual G4VPhysicalVolume *Construct();
 
     private:
-		G4Box *solidWorld;
-		G4Tubs *solidScintillator, *solidSource;
-		G4LogicalVolume *logicWorld, *logicScintillator, *logicSource;
-		G4VPhysicalVolume *physWorld, *physSource, *physScintillatorGate, *physScintillatorSpect;
+	G4Box *solidWorld;
+	G4Tubs *solidScintillator, *solidSource;
+	G4LogicalVolume *logicWorld, *logicScintillator, *logicSource;
+	G4VPhysicalVolume *physWorld, *physSource, *physScintillatorGate, *physScintillatorSpect;
 
-		G4Material *worldMat, *NaI, *PMMA;
+	G4Material *worldMat, *NaI, *PMMA;
 		
-		//This method is invoked inside MyDetectorConstruction()
-		void DefineMaterials();
+	//This method is invoked inside MyDetectorConstruction()
+	void DefineMaterials();
 		
-		//This method is invoked inside the virtual method Construct()
-		void Construct2DPET();
+	//This method is invoked inside the virtual method Construct()
+	void Construct2DPET();
 		
-		//This method is invoked from RunManager->Initialize(), so for us from macro command /run/initialize. It returns the pointer to the SENSITIVE VOLUME
-		virtual void ConstructSDandField();
+	//This method is invoked from RunManager->Initialize(), so for us from macro command /run/initialize. It returns the pointer to the SENSITIVE VOLUME
+	virtual void ConstructSDandField();
 
-		G4GenericMessenger *fMessenger, *fMessenger1;  
+	G4GenericMessenger *fMessenger, *fMessenger1;  
 
-		G4double xWorld, yWorld, zWorld;
-		G4double rhoD, alphaD, gammaD;
+	G4double xWorld, yWorld, zWorld;
+	G4double rhoD, alphaD, gammaD;
 
-		G4bool is2DPET;
+	G4bool is2DPET;
 };
 
 #endif
