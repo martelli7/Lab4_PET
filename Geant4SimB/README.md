@@ -18,14 +18,11 @@
       ```
     - **Visual mode.** Slower way, it shows the Geant4 graphic interface (useful for checking the geometry or the particles tracks):
       ```
-      ./exampleB3a vis.mac
+      ./exampleB3a
       ```
-    - **Loop mode.** It can be used to loop over source coordinates or spectrometer coordinates, in _batch_ only:
-      ```
-      ./exampleB3a det.mac
-      ```
+      It is possibile to use 'run1.mac' and 'run2.mac' files written by CERN, however these were not used.
   
-4. To visualize the spectra, open the _scoring.root_ files with root TBrowser and select fEdepSPCT:
+4. To visualize the spectra, open the 'scoring.root' files with root TBrowser and select fEdepSPCT:
    ```
    root scoring.root
    new TBrowser
