@@ -12,6 +12,6 @@
 /disk/alphaD {alpha}
 /source/alphaS {alpha}
 
-#####!!! DO NOT CHANGE THIS !!!#####
+#####!!! CHANGE NUMBER OF RUNS ONLY !!!#####
 /run/initialize
 /run/beamOn 10000
