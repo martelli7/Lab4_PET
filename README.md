@@ -1,6 +1,6 @@
 # Lab4_PET
 ## How to compile the Geant4 Simulation
-1. Create a build folder inside Geant4SimA/B folder:
+1. Create a build folder inside Geant4SimA folder:
    ```
    cd Geant4SimA
    mkdir build
