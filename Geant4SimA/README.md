@@ -25,7 +25,7 @@
       ./pet_simulation det.mac
       ```
   
-4. To visualize the spectra, open the _output{runID}.root_ files with root TBrowser and select fEdepSPCT:
+4. To visualize the spectra, open the 'output{runID}.root' files with root TBrowser and select fEdepSPCT:
    ```
    root output0.root
    new TBrowser
