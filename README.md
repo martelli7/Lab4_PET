@@ -11,7 +11,7 @@
    cmake ..
    make
    ```
-3A. pet_simulation.exe has been created and it can be run with many macro files according to the user's purpose:
+3. pet_simulation.exe has been created and it can be run with many macro files according to the user's purpose:
     - **Batch mode.** Fastest way to execute the simulation:
       ```
       ./pet_simulation run.mac
