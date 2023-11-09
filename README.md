@@ -1,8 +1,8 @@
 # Lab4_PET
 ## How to compile the Geant4 Simulation
-1. Create a build folder inside Geant4Sim folder:
+1. Create a build folder inside Geant4SimA/B folder:
    ```
-   cd Geant4Sim
+   cd Geant4SimA
    mkdir build
    cd build
    ```
@@ -11,7 +11,7 @@
    cmake ..
    make
    ```
-3. pet_simulation.exe has been created and it can be run with many macro files according to the user's purpose:
+3A. pet_simulation.exe has been created and it can be run with many macro files according to the user's purpose:
     - **Batch mode.** Fastest way to execute the simulation:
       ```
       ./pet_simulation run.mac
