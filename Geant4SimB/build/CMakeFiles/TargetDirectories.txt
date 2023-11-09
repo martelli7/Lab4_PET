@@ -1,8 +1,0 @@
-/home/local1/Documents/B3a/build/CMakeFiles/install/strip.dir
-/home/local1/Documents/B3a/build/CMakeFiles/install/local.dir
-/home/local1/Documents/B3a/build/CMakeFiles/B3a.dir
-/home/local1/Documents/B3a/build/CMakeFiles/rebuild_cache.dir
-/home/local1/Documents/B3a/build/CMakeFiles/list_install_components.dir
-/home/local1/Documents/B3a/build/CMakeFiles/exampleB3a.dir
-/home/local1/Documents/B3a/build/CMakeFiles/edit_cache.dir
-/home/local1/Documents/B3a/build/CMakeFiles/install.dir
