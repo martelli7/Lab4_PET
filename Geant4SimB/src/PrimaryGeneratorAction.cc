@@ -58,52 +58,53 @@ PrimaryGeneratorAction::PrimaryGeneratorAction()
 
 
 
-  G4int n_particle = 1;
-  fParticleGun  = new G4ParticleGun(n_particle);
+  	G4int n_particle = 1;
+  	fParticleGun  = new G4ParticleGun(n_particle);
 
-  // default particle kinematic
+  	// default particle kinematic
 
-  G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-  G4ParticleDefinition* particle
-                    = particleTable->FindParticle("chargedgeantino");
-  fParticleGun->SetParticleDefinition(particle);
-  fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.));
-  fParticleGun->SetParticleEnergy(1*eV);
-  fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
+  	G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+  	G4ParticleDefinition* particle = particleTable->FindParticle("chargedgeantino");
+ 	
+	fParticleGun->SetParticleDefinition(particle);
+  	fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,0.));
+  	fParticleGun->SetParticleEnergy(1*eV);
+  	fParticleGun->SetParticleMomentumDirection(G4ThreeVector(1.,0.,0.));
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
 {
-  delete fParticleGun;
+  	delete fParticleGun;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
-  G4ParticleDefinition* particle = fParticleGun->GetParticleDefinition();
-  if (particle == G4ChargedGeantino::ChargedGeantino()) {
-    //fluorine
-    G4int Z = 11, A = 22;
-    G4double ionCharge   = 0.*eplus;
-    G4double excitEnergy = 0.*keV;
+  	G4ParticleDefinition* particle = fParticleGun->GetParticleDefinition();
+  	if (particle == G4ChargedGeantino::ChargedGeantino()) 
+	{
+    		//sodium-22
+   		G4int Z = 11, A = 22;
+    		G4double ionCharge   = 0.*eplus;
+    		G4double excitEnergy = 0.*keV;
 
-    G4ParticleDefinition* ion
-       = G4IonTable::GetIonTable()->GetIon(Z,A,excitEnergy);
-    fParticleGun->SetParticleDefinition(ion);
-    fParticleGun->SetParticleCharge(ionCharge);
-  }
+   	 	G4ParticleDefinition* ion = G4IonTable::GetIonTable()->GetIon(Z,A,excitEnergy);
+    		
+		fParticleGun->SetParticleDefinition(ion);
+    		fParticleGun->SetParticleCharge(ionCharge);
+  	}
 
   
-  G4double x0  = rhoS*cos(alphaS*deg)*mm, y0 = 0.*mm, z0 = rhoS*sin(alphaS*deg)*mm ;
+  	G4double x0  = rhoS*cos(alphaS*deg)*mm, y0 = 0.*mm, z0 = rhoS*sin(alphaS*deg)*mm ;
 
-  fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
+  	fParticleGun->SetParticlePosition(G4ThreeVector(x0,y0,z0));
 
-  //create vertex
-  //
-  fParticleGun->GeneratePrimaryVertex(anEvent);
+  	//create vertex
+  	//
+  	fParticleGun->GeneratePrimaryVertex(anEvent);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
