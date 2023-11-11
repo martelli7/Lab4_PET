@@ -16,15 +16,15 @@
       ```
       ./exampleB3a run.mac
       ```
-    - **Visual mode.** Slower way, it shows the Geant4 graphic interface (useful for checking the geometry or the particles tracks):
+    - **Visual mode.** Slower way, it shows the Geant4 graphic interface running initial_vis.mac file (useful for checking the geometry or the particles tracks):
       ```
       ./exampleB3a
       ```
       It is possibile to use 'run1.mac' and 'run2.mac' files written by CERN, however these were not used.
   
-4. To visualize the spectra, open the 'scoring.root' files with root TBrowser and select fEdepSPCT:
+4. To visualize the spectra, open the 'output{runID}.root' files with root TBrowser and select fEdepCoincidence or fEdepSPCT:
    ```
-   root scoring.root
+   root output0.root
    new TBrowser
    ```
 ## Credits
