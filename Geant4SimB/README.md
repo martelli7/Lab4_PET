@@ -16,22 +16,18 @@
       ```
       ./exampleB3a run.mac
       ```
-    - **Visual mode.** Slower way, it shows the Geant4 graphic interface (useful for checking the geometry or the particles tracks):
+    - **Visual mode.** Slower way, it shows the Geant4 graphic interface by running initial_vis.mac file (useful for checking the geometry or the particles tracks):
       ```
       ./exampleB3a
       ```
       It is possibile to use 'run1.mac' and 'run2.mac' files written by CERN, however these were not used.
+   - **Loop mode.** It can be used to loop over source coordinates or spectrometer coordinates, in _batch_ only:
+      ```
+      ./exampleB3a det.mac
+      ```
   
-4. To visualize the spectra, open the 'scoring.root' files with root TBrowser and select fEdepSPCT:
+4. To visualize the spectra, open the 'output{runID}.root' files with root TBrowser and select fEdepCoincidence or crystal_edep_score:
    ```
-   root scoring.root
+   root output0.root
    new TBrowser
    ```
-## Credits
-All the codes in this repository were created for the _Nuclear and Subnuclear Measurements Laboratory course_ of the Physics Master degree of the _University of Milano-Bicocca_, 2022/2023 Academic Year.
-
-The geant4 simulation is based on the CERN guide, built-in examples, and on the [Youtube tutorials](https://youtube.com/playlist?list=PLLybgCU6QCGWgzNYOV0SKen9vqg4KXeVL&si=KvdO9rwtt9r4BO5_) of [Dr. Mustafa Schmidt](https://github.com/MustafaSchmidt).
-
-All credits go to Alessandro Lazzaroni, [Mattia Martelli](https://github.com/martelli7), Francesco Merighi and Beatrice Scotti.
-
-Special thanks to Dr. Daniele Guffanti for his help throughout the course.
