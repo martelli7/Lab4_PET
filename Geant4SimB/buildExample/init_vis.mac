@@ -14,4 +14,14 @@
 /run/initialize
 #
 # Visualization setting
-/control/execute vis.mac
+#/control/execute vis.mac
+
+/vis/open OGLSQt
+/vis/viewer/set/viewpointVector 1 1 1
+/vis/drawVolume
+/vis/viewer/set/autoRefresh true
+/vis/scene/add/trajectories smooth
+/vis/scene/add/scale 10 cm
+/vis/scene/add/axes
+/vis/scene/add/eventID
+/vis/scene/endOfEventAction accumulate

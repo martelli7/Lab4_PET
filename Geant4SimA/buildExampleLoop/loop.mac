@@ -1,0 +1,19 @@
+
+#####!!! Comment the unused lines !!!#####
+
+#####To control alphadisk OR alphasource OR gammaspct#####
+#/disk/alphaD {alphadisk}
+#/source/alphaS {alphasource}
+
+/detector/gammaD {gammaspct}
+
+
+#####To control both alphadisk AND alphasource#####
+#/disk/alphaD {alpha}
+#/source/alphaS {alpha}
+
+#####!!! Must reinitialize the geometry before another run starts !!!#####
+/run/reinitializeGeometry
+
+#####!!! CHANGE NUMBER OF RUNS ONLY !!!#####
+/run/beamOn 1000000

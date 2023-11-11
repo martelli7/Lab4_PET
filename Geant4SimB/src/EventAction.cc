@@ -31,6 +31,7 @@
 #include "RunAction.hh"
 
 #include "G4RunManager.hh"
+#include "G4AnalysisManager.hh"
 #include "G4Event.hh"
 
 #include "G4SDManager.hh"
@@ -70,18 +71,30 @@ void EventAction::EndOfEventAction(const G4Event* evt )
 
   //Energy in crystals : identify 'good events'
   //
-  const G4double eThresholdLLD = 500*keV;
-  //const G4double eThresholdULD = 550*keV;
+  const G4double eThresholdLLD = 450*keV;
+  const G4double eThresholdULD = 550*keV;
   G4int nbOfFired = 0;
 
   auto evtMap = (G4THitsMap<G4double>*)(HCE->GetHC(fCollID_cryst));
 
   std::map<G4int,G4double*>::iterator itr;
   for (itr = evtMap->GetMap()->begin(); itr != evtMap->GetMap()->end(); itr++) {
-    ///G4int copyNb  = (itr->first);
+    //G4int copyNb  = (itr->first);
     G4double edep = *(itr->second);
-    if (edep > eThresholdLLD /*&& edep < eThresholdULD*/) nbOfFired++;
-    ///G4cout << "\n  cryst" << copyNb << ": " << edep/keV << " keV ";
+    if (edep > eThresholdLLD && edep < eThresholdULD) 
+	{
+		nbOfFired++;
+		
+		if (nbOfFired == 2)
+		{
+			//Coincidence Spectrum
+			G4AnalysisManager *man = G4AnalysisManager::Instance();
+			man->FillNtupleDColumn(0, 0, edep); 
+
+			man->AddNtupleRow(0);
+		}
+	}
+    //G4cout << "\n  cryst" << copyNb << ": " << edep/keV << " keV ";
   }
   if (nbOfFired == 2) fRunAction->CountEvent();
 

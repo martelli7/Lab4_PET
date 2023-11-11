@@ -2,12 +2,16 @@
 #In the real experiment, radial distance was fixed, the plate was rotated of 2.5 deg steps
 #Spectrometer was rotated between -30. and +30. deg
 
+#####!!! Must initialize the kernel !!!#####
+/run/initialize
+
 #####!!! Comment the unused lines !!!#####
 
 #####To control alphadisk OR alphasource OR gammaspct#####
-#/control/loop scandet.mac alphadisk 225.0 585.0 2.5
-#/control/loop scandet.mac alphasource 225.0 585.0 2.5
-#/control/foreach scandet.mac gammaspct -30. -22.5 0. 15. 30.
+#/control/loop loop.mac alphadisk 225.0 585.0 2.5
+#/control/loop loop.mac alphasource 225.0 585.0 2.5
+
+/control/foreach loop.mac gammaspct -30. -22.5 0. 15. 30.
 
 #####To control both alphadisk AND alphasource#####
-/control/loop scandet.mac alpha 225.0 585.0 2.5
+#/control/loop loop.mac alpha 225.0 585.0 2.5

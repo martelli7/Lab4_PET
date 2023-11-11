@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/local1/Documents/B3a
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExample
+CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExampleLoop
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local1/Documents/B3a/buildExample/CMakeFiles /home/local1/Documents/B3a/buildExample//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local1/Documents/B3a/buildExampleLoop/CMakeFiles /home/local1/Documents/B3a/buildExampleLoop//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/local1/Documents/B3a/buildExample/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/local1/Documents/B3a/buildExampleLoop/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

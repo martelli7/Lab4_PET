@@ -10,7 +10,7 @@ MyDetectorConstruction::MyDetectorConstruction()
 
 	fMessenger->DeclareProperty("alphaD", alphaD, "Plastic disk coordinate alpha with respect positive y axis, insert positive values [deg]");
 	
-	rhoD = -111.;  //Real experiment: -111.0*mm
+	rhoD = 0.;  //Real experiment: -111.0*mm
 	alphaD = 0.; //Real experiment: 225.0*deg (rest rotating plate)
 
 	fMessenger1 = new G4GenericMessenger(this, "/detector/", "Spectrometer Construction");
@@ -93,24 +93,28 @@ void MyDetectorConstruction::Construct2DPET()
 {	
 
 	solidScintillator = new G4Tubs("solidScintillator", //name
-	 				0.*mm, 12.7*mm, //inner and outer radius
-					12.7*mm, //height
-					0*deg, 360*deg); //initial and final angle
+	 							 		0.*mm, 12.7*mm, //inner and outer radius
+											   12.7*mm, //height
+									   0*deg, 360*deg); //initial and final angle
 
-	logicScintillator = new G4LogicalVolume(solidScintillator, //solid volume
- 						NaI, //material
-						"logicScintillator"); //name
+	logicScintillatorGATE = new G4LogicalVolume(solidScintillator, //solid volume
+ 														  NaI, //material
+										 "logicScintillatorGATE"); //name
+
+	logicScintillatorSPCT = new G4LogicalVolume(solidScintillator, //solid volume
+ 														  NaI, //material
+										 "logicScintillatorSPCT"); //name
 
 	//Let's create two identical NaI crystals, 
 	//1. the GATE 
-	physScintillatorGate = new G4PVPlacement(0, //rotation
- 			  			G4ThreeVector(0., 0., +198.7*mm), //position coordinates
- 						logicScintillator, //logical volume
- 						"physScintillator", //name
- 						logicWorld, //logical mother volume
- 						false, //no boolean operator
-						33, //copy number = 33
-						true); //check overlaps
+	physScintillatorGATE = new G4PVPlacement(0, //rotation
+ 			  G4ThreeVector(0., 0., +198.7*mm), //position coordinates
+ 							 logicScintillatorGATE, //logical volume
+ 							"physScintillatorGATE", //name
+ 									logicWorld, //logical mother volume
+ 										 false, //no boolean operator
+											33, //copy number = 33
+										 true); //check overlaps
 
 	//2. the SPECTROMETER
 
@@ -118,13 +122,13 @@ void MyDetectorConstruction::Construct2DPET()
 	G4Translate3D tranSZ(G4ThreeVector(0., 0., -198.7*mm));
 	G4Transform3D transformSpct = (rotSY)*(tranSZ);
 
-	physScintillatorSpect = new G4PVPlacement(transformSpct, //rotation and position				  
-						logicScintillator, //logical volume
- 						"physScintillator", //name
- 						logicWorld, //logical mother volume
- 						false, //no boolean operator
-						44, //copy number = 44
-						true); //check overlaps
+	physScintillatorSPCT = new G4PVPlacement(transformSpct, //rotation and position				  
+							  logicScintillatorSPCT, //logical volume
+ 							 "physScintillatorSPCT", //name
+ 									 logicWorld, //logical mother volume
+ 										  false, //no boolean operator
+											 44, //copy number = 44
+										  true); //check overlaps
 }
 
 
@@ -134,31 +138,31 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 {
 	//Define the World volume
 	solidWorld = new G4Box("solidWorld", //name
-			       	xWorld,yWorld,zWorld); //dimensions x/2, y/2, z/2
+				  xWorld,yWorld,zWorld); //dimensions x/2, y/2, z/2
 
 	logicWorld = new G4LogicalVolume(solidWorld, //solid volume
- 					worldMat, //material
-					"logicWorld"); //name
+ 									   worldMat, //material
+							      "logicWorld"); //name
 
 	physWorld = new G4PVPlacement(0, //rotation
- 		  		      	G4ThreeVector(0., 0., 0.), //position coordinates
- 					logicWorld, //logical volume
- 					"physWorld", //name
- 					0, //logical mother volume
- 					false, //no boolean operator
-					13, //copy number = 13
-					true); //check overlaps
+ 		  G4ThreeVector(0., 0., 0.), //position coordinates
+ 						 logicWorld, //logical volume
+ 						"physWorld", //name
+ 					              0, //logical mother volume
+ 							  false, //no boolean operator
+								 13, //copy number = 13
+							  true); //check overlaps
 	 
 	  
 	//Let's create the source plastic capsule 
 	solidSource = new G4Tubs("solidSource", //name
-				0*mm, 1*cm, //inner and outer radius
-				2*mm, //height
-				0*deg, 360*deg); //initial and final angle
+								0*mm, 1*cm, //inner and outer radius
+									  2*mm, //height
+						   0*deg, 360*deg); //initial and final angle
 
 	logicSource = new G4LogicalVolume(solidSource, //solid volume
-					PMMA, //material
-					"logicSource"); //name
+											 PMMA, //material
+								   "logicSource"); //name
 
 	logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1, 0, 0))); //let's display it in red
 	
@@ -167,21 +171,22 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 	G4Transform3D transformDisk = (rotY)*(tranZ);
 	
 	physSource = new G4PVPlacement(transformDisk, //rotation and position coordinates
-					logicSource, //logical volume
-		                	"physSource", //name
-					logicWorld, //logical mother volume
-					false, //no boolean operator 
-					11, //copy number = 11
-					true); //check overlaps
+						 logicSource, //logical volume
+		                "physSource", //name
+					      logicWorld, //logical mother volume
+					           false, //no boolean operator 
+								  11, //copy number = 11
+							   true); //check overlaps
 
 	//Call constructor of the detector
 	if(is2DPET) 
 	{
 		Construct2DPET();
+		G4cout << "Gamma angle = " << gammaD << G4endl;
 	}
 
 	//Make logicScintillator a Sensitive Detector
-	ConstructSDandField(); 
+	//ConstructSDandField(); 
 
 	return physWorld;
 }
@@ -191,15 +196,16 @@ G4VPhysicalVolume *MyDetectorConstruction::Construct()
 
 void MyDetectorConstruction::ConstructSDandField()
 {
-    	MySensitiveDetector *sensDet = new MySensitiveDetector("SensitiveDetector"); //name
+    MySensitiveDetector *sensDet = new MySensitiveDetector("SensitiveDetector"); //name
 
-    	//Tell who are the SensitiveDetectors, i.e. logicScintillator
-   	if(logicScintillator != NULL)
-    	{    
-		logicScintillator->SetSensitiveDetector(sensDet);
-    	}
-    	else
-    	{
-    		G4cout << "ERROR: logiScintillator not defined!" << G4endl;
-    	}
+    //Tell who are the SensitiveDetectors, i.e. logicScintillator
+    if(logicScintillatorGATE != NULL && logicScintillatorSPCT != NULL)
+    {    
+		logicScintillatorGATE->SetSensitiveDetector(sensDet);
+		logicScintillatorSPCT->SetSensitiveDetector(sensDet);
+    }
+    else
+    {
+    	G4cout << "ERROR: logiScintillator not defined!" << G4endl;
+  	}
 }

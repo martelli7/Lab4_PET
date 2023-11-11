@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/local1/Documents/B3a
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExample
+CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExampleLoop
 
 # Include any dependencies generated for this target.
 include CMakeFiles/exampleB3a.dir/depend.make
@@ -72,7 +72,7 @@ include CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/exampleB3a.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/exampleB3a.cc.o: ../exampleB3a.cc
 CMakeFiles/exampleB3a.dir/exampleB3a.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exampleB3a.dir/exampleB3a.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exampleB3a.dir/exampleB3a.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/exampleB3a.cc.o -MF CMakeFiles/exampleB3a.dir/exampleB3a.cc.o.d -o CMakeFiles/exampleB3a.dir/exampleB3a.cc.o -c /home/local1/Documents/B3a/exampleB3a.cc
 
 CMakeFiles/exampleB3a.dir/exampleB3a.cc.i: cmake_force
@@ -86,7 +86,7 @@ CMakeFiles/exampleB3a.dir/exampleB3a.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o: ../src/ActionInitialization.cc
 CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o -MF CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o.d -o CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.o -c /home/local1/Documents/B3a/src/ActionInitialization.cc
 
 CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.i: cmake_force
@@ -100,7 +100,7 @@ CMakeFiles/exampleB3a.dir/src/ActionInitialization.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o: ../src/DetectorConstruction.cc
 CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o -MF CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o.d -o CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.o -c /home/local1/Documents/B3a/src/DetectorConstruction.cc
 
 CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.i: cmake_force
@@ -114,7 +114,7 @@ CMakeFiles/exampleB3a.dir/src/DetectorConstruction.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/EventAction.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/EventAction.cc.o: ../src/EventAction.cc
 CMakeFiles/exampleB3a.dir/src/EventAction.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exampleB3a.dir/src/EventAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exampleB3a.dir/src/EventAction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/EventAction.cc.o -MF CMakeFiles/exampleB3a.dir/src/EventAction.cc.o.d -o CMakeFiles/exampleB3a.dir/src/EventAction.cc.o -c /home/local1/Documents/B3a/src/EventAction.cc
 
 CMakeFiles/exampleB3a.dir/src/EventAction.cc.i: cmake_force
@@ -128,7 +128,7 @@ CMakeFiles/exampleB3a.dir/src/EventAction.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o: ../src/PhysicsList.cc
 CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o -MF CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o.d -o CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.o -c /home/local1/Documents/B3a/src/PhysicsList.cc
 
 CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.i: cmake_force
@@ -142,7 +142,7 @@ CMakeFiles/exampleB3a.dir/src/PhysicsList.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o: ../src/PrimaryGeneratorAction.cc
 CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o -MF CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o.d -o CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.o -c /home/local1/Documents/B3a/src/PrimaryGeneratorAction.cc
 
 CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.i: cmake_force
@@ -156,7 +156,7 @@ CMakeFiles/exampleB3a.dir/src/PrimaryGeneratorAction.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/RunAction.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/RunAction.cc.o: ../src/RunAction.cc
 CMakeFiles/exampleB3a.dir/src/RunAction.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/exampleB3a.dir/src/RunAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/exampleB3a.dir/src/RunAction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/RunAction.cc.o -MF CMakeFiles/exampleB3a.dir/src/RunAction.cc.o.d -o CMakeFiles/exampleB3a.dir/src/RunAction.cc.o -c /home/local1/Documents/B3a/src/RunAction.cc
 
 CMakeFiles/exampleB3a.dir/src/RunAction.cc.i: cmake_force
@@ -170,7 +170,7 @@ CMakeFiles/exampleB3a.dir/src/RunAction.cc.s: cmake_force
 CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o: CMakeFiles/exampleB3a.dir/flags.make
 CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o: ../src/StackingAction.cc
 CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o: CMakeFiles/exampleB3a.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o"
 	/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o -MF CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o.d -o CMakeFiles/exampleB3a.dir/src/StackingAction.cc.o -c /home/local1/Documents/B3a/src/StackingAction.cc
 
 CMakeFiles/exampleB3a.dir/src/StackingAction.cc.i: cmake_force
@@ -259,7 +259,7 @@ exampleB3a: /usr/local/geant4.11.1.1/lib64/libG4global.so
 exampleB3a: /usr/local/geant4.11.1.1/lib64/libG4ptl.so.2.3.3
 exampleB3a: /usr/local/clhep/2.4.6.2/lib/libCLHEP-2.4.6.2.so
 exampleB3a: CMakeFiles/exampleB3a.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/B3a/buildExample/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable exampleB3a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/local1/Documents/B3a/buildExampleLoop/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable exampleB3a"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/exampleB3a.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -271,6 +271,6 @@ CMakeFiles/exampleB3a.dir/clean:
 .PHONY : CMakeFiles/exampleB3a.dir/clean
 
 CMakeFiles/exampleB3a.dir/depend:
-	cd /home/local1/Documents/B3a/buildExample && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/B3a /home/local1/Documents/B3a /home/local1/Documents/B3a/buildExample /home/local1/Documents/B3a/buildExample /home/local1/Documents/B3a/buildExample/CMakeFiles/exampleB3a.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/local1/Documents/B3a/buildExampleLoop && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/B3a /home/local1/Documents/B3a /home/local1/Documents/B3a/buildExampleLoop /home/local1/Documents/B3a/buildExampleLoop /home/local1/Documents/B3a/buildExampleLoop/CMakeFiles/exampleB3a.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/exampleB3a.dir/depend
 

@@ -69,8 +69,8 @@ class DetectorConstruction : public G4VUserDetectorConstruction
 
 	G4Box *solidWorld;
 	G4Tubs *solidScintillator, *solidSource;
-	G4LogicalVolume *logicWorld, *logicScintillator, *logicSource;
-	G4VPhysicalVolume *physWorld, *physSource, *physScintillatorGate, *physScintillatorSpect;
+	G4LogicalVolume *logicWorld, *logicScintillatorGATE, *logicScintillatorSPCT,  *logicSource;
+	G4VPhysicalVolume *physWorld, *physSource, *physScintillatorGATE, *physScintillatorSPCT;
 
 	G4Material *worldMat, *NaI, *PMMA;	
 

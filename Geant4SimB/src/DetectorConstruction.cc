@@ -134,21 +134,25 @@ void DetectorConstruction::DefineMaterials()
 void DetectorConstruction::Construct2DPET()
 {	
 
-	solidScintillator = new G4Tubs("crystal", //name
+	solidScintillator = new G4Tubs("solidScintillator", //name
 	 							 		0.*mm, 12.7*mm, //inner and outer radius
 											   12.7*mm, //height
 									   0*deg, 360*deg); //initial and final angle
 
-	logicScintillator = new G4LogicalVolume(solidScintillator, //solid volume
+	logicScintillatorGATE = new G4LogicalVolume(solidScintillator, //solid volume
  														  NaI, //material
-										 "logicScintillator"); //name
+										 "logicScintillatorGATE"); //name
+
+	logicScintillatorSPCT = new G4LogicalVolume(solidScintillator, //solid volume
+ 														  NaI, //material
+										 "logicScintillatorSPCT"); //name
 
 	//Let's create two identical NaI crystals, 
 	//1. the GATE 
-	physScintillatorGate = new G4PVPlacement(0, //rotation
+	physScintillatorGATE = new G4PVPlacement(0, //rotation
  			  G4ThreeVector(0., 0., +198.7*mm), //position coordinates
- 							 logicScintillator, //logical volume
- 							"crystal", //name
+ 							 logicScintillatorGATE, //logical volume
+ 							"physScintillatorGATE", //name
  									logicWorld, //logical mother volume
  										 false, //no boolean operator
 											33, //copy number = 33
@@ -160,9 +164,9 @@ void DetectorConstruction::Construct2DPET()
 	G4Translate3D tranSZ(G4ThreeVector(0., 0., -198.7*mm));
 	G4Transform3D transformSpct = (rotSY)*(tranSZ);
 
-	physScintillatorSpect = new G4PVPlacement(transformSpct, //rotation and position				  
-							  logicScintillator, //logical volume
- 							 "crystal", //name
+	physScintillatorSPCT = new G4PVPlacement(transformSpct, //rotation and position				  
+							  logicScintillatorSPCT, //logical volume
+ 							 "physScintillatorSPCT", //name
  									 logicWorld, //logical mother volume
  										  false, //no boolean operator
 											 44, //copy number = 44
@@ -225,6 +229,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 	if(is2DPET) 
 	{
 		Construct2DPET();
+		G4cout << "Gamma angle = " << gammaD << G4endl;
 	} 
   
 
@@ -240,12 +245,13 @@ void DetectorConstruction::ConstructSDandField()
   G4SDManager::GetSDMpointer()->SetVerboseLevel(1);
 
   // declare crystal as a MultiFunctionalDetector scorer
-  //
+  // NB: "crystal" is not the name of the physical volumes!!!
   auto cryst = new G4MultiFunctionalDetector("crystal");
   G4SDManager::GetSDMpointer()->AddNewDetector(cryst);
   G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
   cryst->RegisterPrimitive(primitiv1);
-  SetSensitiveDetector("logicScintillator",cryst);
+	logicScintillatorGATE->SetSensitiveDetector(cryst);
+	logicScintillatorSPCT->SetSensitiveDetector(cryst);
 
 }
 

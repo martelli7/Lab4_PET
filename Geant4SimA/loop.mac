@@ -5,13 +5,15 @@
 #/disk/alphaD {alphadisk}
 #/source/alphaS {alphasource}
 
-#/detector/gammaD {gammaspct}
+/detector/gammaD {gammaspct}
 
 
 #####To control both alphadisk AND alphasource#####
-/disk/alphaD {alpha}
-/source/alphaS {alpha}
+#/disk/alphaD {alpha}
+#/source/alphaS {alpha}
+
+#####!!! Must reinitialize the geometry before another run starts !!!#####
+/run/reinitializeGeometry
 
 #####!!! CHANGE NUMBER OF RUNS ONLY !!!#####
-/run/initialize
-/run/beamOn 10000
+/run/beamOn 1000000

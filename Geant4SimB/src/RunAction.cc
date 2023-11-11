@@ -31,6 +31,7 @@
 #include "PrimaryGeneratorAction.hh"
 
 #include "G4RunManager.hh"
+#include "G4AnalysisManager.hh"
 #include "G4Run.hh"
 #include "G4AccumulableManager.hh"
 #include "G4UnitsTable.hh"
@@ -48,6 +49,12 @@ RunAction::RunAction()
   // Register accumulable to the accumulable manager
   G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
   accumulableManager->RegisterAccumulable(fGoodEvents);
+
+  G4AnalysisManager *man = G4AnalysisManager::Instance();
+
+  man->CreateNtuple("Energy Deposition", "Energy deposition");
+  man->CreateNtupleDColumn("fEdepCoincidence");
+  man->FinishNtuple(0);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -62,6 +69,16 @@ void RunAction::BeginOfRunAction(const G4Run* run)
 
   //inform the runManager to save random number seed
   G4RunManager::GetRunManager()->SetRandomNumberStore(false);
+
+
+  G4AnalysisManager *man = G4AnalysisManager::Instance();
+  G4int runID = run->GetRunID();
+
+  std::stringstream strRunID;
+  strRunID << runID;
+
+  man->OpenFile("output"+strRunID.str()+".root");
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -108,6 +125,13 @@ void RunAction::EndOfRunAction(const G4Run* run)
   }
   G4cout
      << "; Nb of 'good' e+ annihilations: " << fGoodEvents.GetValue()  << G4endl;
+
+	G4AnalysisManager *man = G4AnalysisManager::Instance();
+
+    man->Write();
+    man->CloseFile();
+
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

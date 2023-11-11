@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/local1/Documents/B3a
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExample
+CMAKE_BINARY_DIR = /home/local1/Documents/B3a/buildExampleLoop
 
 # Utility rule file for B3a.
 
@@ -81,6 +81,6 @@ CMakeFiles/B3a.dir/clean:
 .PHONY : CMakeFiles/B3a.dir/clean
 
 CMakeFiles/B3a.dir/depend:
-	cd /home/local1/Documents/B3a/buildExample && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/B3a /home/local1/Documents/B3a /home/local1/Documents/B3a/buildExample /home/local1/Documents/B3a/buildExample /home/local1/Documents/B3a/buildExample/CMakeFiles/B3a.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/local1/Documents/B3a/buildExampleLoop && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/local1/Documents/B3a /home/local1/Documents/B3a /home/local1/Documents/B3a/buildExampleLoop /home/local1/Documents/B3a/buildExampleLoop /home/local1/Documents/B3a/buildExampleLoop/CMakeFiles/B3a.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/B3a.dir/depend
 

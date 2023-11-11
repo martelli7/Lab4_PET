@@ -17,15 +17,15 @@ class MyPrimaryGenerator : public G4VUserPrimaryGeneratorAction
     	MyPrimaryGenerator();
     	~MyPrimaryGenerator();
 		
-	//This method is invoked from RunManager() during the loop. It generates the particle primary vertex
+		//This method is invoked from RunManager() during the loop. It generates the particle primary vertex
     	virtual void GeneratePrimaries(G4Event*);
 	
     private:
         G4ParticleGun *fParticleGun;
 
-	G4GenericMessenger *fMessenger2;
+		G4GenericMessenger *fMessenger2;
 
-	G4double rhoS, alphaS;
+		G4double rhoS, alphaS;
 };
 
 #endif

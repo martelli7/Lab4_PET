@@ -47,11 +47,11 @@ set(EXAMPLEB3_SCRIPTS
   exampleB3.out
   init_vis.mac
 run.mac
-scandet.mac
-det.mac
   run1.mac
   run2.mac
   vis.mac
+det.mac
+loop.mac
   )
 
 foreach(_script ${EXAMPLEB3_SCRIPTS})
