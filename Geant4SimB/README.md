@@ -16,7 +16,7 @@
       ```
       ./exampleB3a run.mac
       ```
-    - **Visual mode.** Slower way, it shows the Geant4 graphic interface running initial_vis.mac file (useful for checking the geometry or the particles tracks):
+    - **Visual mode.** Slower way, it shows the Geant4 graphic interface by running initial_vis.mac file (useful for checking the geometry or the particles tracks):
       ```
       ./exampleB3a
       ```
