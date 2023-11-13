@@ -52,53 +52,55 @@ EventAction::EventAction(RunAction* runAction)
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void EventAction::BeginOfEventAction(const G4Event* /*evt*/)
-{ }
+{}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void EventAction::EndOfEventAction(const G4Event* evt )
 {
-   //Hits collections
-  //
-  G4HCofThisEvent* HCE = evt->GetHCofThisEvent();
-  if(!HCE) return;
+	//Hits collections
+  	//
+  	G4HCofThisEvent* HCE = evt->GetHCofThisEvent();
+  	if(!HCE) return;
 
-   // Get hits collections IDs
-  if (fCollID_cryst < 0) {
-    G4SDManager* SDMan = G4SDManager::GetSDMpointer();
-    fCollID_cryst   = SDMan->GetCollectionID("crystal/edep");
-  }
-
-  //Energy in crystals : identify 'good events'
-  //
-  const G4double eThresholdLLD = 450*keV;
-  const G4double eThresholdULD = 550*keV;
-  G4int nbOfFired = 0;
-
-  auto evtMap = (G4THitsMap<G4double>*)(HCE->GetHC(fCollID_cryst));
-
-  std::map<G4int,G4double*>::iterator itr;
-  for (itr = evtMap->GetMap()->begin(); itr != evtMap->GetMap()->end(); itr++) {
-    //G4int copyNb  = (itr->first);
-    G4double edep = *(itr->second);
-    if (edep > eThresholdLLD && edep < eThresholdULD) 
+   	// Get hits collections IDs
+  	if (fCollID_cryst < 0) 
 	{
-		nbOfFired++;
-		
-		if (nbOfFired == 2)
+    		G4SDManager* SDMan = G4SDManager::GetSDMpointer();
+    		fCollID_cryst   = SDMan->GetCollectionID("crystal/edep");
+  	}
+
+  	//Energy in crystals : identify 'good events'
+  	//
+  	const G4double eThresholdLLD = 450*keV;
+  	const G4double eThresholdULD = 550*keV;
+  	G4int nbOfFired = 0;
+
+  	auto evtMap = (G4THitsMap<G4double>*)(HCE->GetHC(fCollID_cryst));
+
+  	std::map<G4int,G4double*>::iterator itr;
+  	for (itr = evtMap->GetMap()->begin(); itr != evtMap->GetMap()->end(); itr++) 
+  	{
+	  	//G4int copyNb  = (itr->first);
+		G4double edep = *(itr->second);
+	    	if (edep > eThresholdLLD && edep < eThresholdULD) 
 		{
-			//Coincidence Spectrum
-			G4AnalysisManager *man = G4AnalysisManager::Instance();
-			man->FillNtupleDColumn(0, 0, edep); 
-
-			man->AddNtupleRow(0);
+			nbOfFired++;
+		
+			if (nbOfFired == 2)
+			{
+				//Coincidence Spectrum
+				G4AnalysisManager *man = G4AnalysisManager::Instance();
+				man->FillNtupleDColumn(0, 0, edep); 
+	
+				man->AddNtupleRow(0);
+			}
 		}
-	}
-    //G4cout << "\n  cryst" << copyNb << ": " << edep/keV << " keV ";
-  }
-  if (nbOfFired == 2) fRunAction->CountEvent();
+    		//G4cout << "\n  cryst" << copyNb << ": " << edep/keV << " keV ";
+  	}
+  	if (nbOfFired == 2) fRunAction->CountEvent();
 
-}
+	}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 

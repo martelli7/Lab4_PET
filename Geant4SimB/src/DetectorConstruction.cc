@@ -80,12 +80,7 @@ DetectorConstruction::DetectorConstruction()
 	//Define detector type
 	is2DPET = true;
 
-
-
-
-
-
-  DefineMaterials();
+	DefineMaterials();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -135,28 +130,28 @@ void DetectorConstruction::Construct2DPET()
 {	
 
 	solidScintillator = new G4Tubs("solidScintillator", //name
-	 							 		0.*mm, 12.7*mm, //inner and outer radius
-											   12.7*mm, //height
-									   0*deg, 360*deg); //initial and final angle
+	 				0.*mm, 12.7*mm, //inner and outer radius
+					12.7*mm, //height
+					0*deg, 360*deg); //initial and final angle
 
 	logicScintillatorGATE = new G4LogicalVolume(solidScintillator, //solid volume
- 														  NaI, //material
-										 "logicScintillatorGATE"); //name
+ 							NaI, //material
+							"logicScintillatorGATE"); //name
 
 	logicScintillatorSPCT = new G4LogicalVolume(solidScintillator, //solid volume
- 														  NaI, //material
-										 "logicScintillatorSPCT"); //name
+ 							NaI, //material
+							"logicScintillatorSPCT"); //name
 
 	//Let's create two identical NaI crystals, 
 	//1. the GATE 
 	physScintillatorGATE = new G4PVPlacement(0, //rotation
- 			  G4ThreeVector(0., 0., +198.7*mm), //position coordinates
- 							 logicScintillatorGATE, //logical volume
- 							"physScintillatorGATE", //name
- 									logicWorld, //logical mother volume
- 										 false, //no boolean operator
-											33, //copy number = 33
-										 true); //check overlaps
+ 			  			G4ThreeVector(0., 0., +198.7*mm), //position coordinates
+ 						logicScintillatorGATE, //logical volume
+ 						"physScintillatorGATE", //name
+ 						logicWorld, //logical mother volume
+ 						false, //no boolean operator
+						33, //copy number = 33
+						true); //check overlaps
 
 	//2. the SPECTROMETER
 
@@ -165,12 +160,12 @@ void DetectorConstruction::Construct2DPET()
 	G4Transform3D transformSpct = (rotSY)*(tranSZ);
 
 	physScintillatorSPCT = new G4PVPlacement(transformSpct, //rotation and position				  
-							  logicScintillatorSPCT, //logical volume
- 							 "physScintillatorSPCT", //name
- 									 logicWorld, //logical mother volume
- 										  false, //no boolean operator
-											 44, //copy number = 44
-										  true); //check overlaps
+						logicScintillatorSPCT, //logical volume
+ 						"physScintillatorSPCT", //name
+ 						logicWorld, //logical mother volume
+ 						false, //no boolean operator
+						44, //copy number = 44
+						true); //check overlaps
 }
 
 
@@ -185,31 +180,31 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 {
 	//Define the World volume
 	solidWorld = new G4Box("solidWorld", //name
-				  xWorld,yWorld,zWorld); //dimensions x/2, y/2, z/2
+				xWorld,yWorld,zWorld); //dimensions x/2, y/2, z/2
 
 	logicWorld = new G4LogicalVolume(solidWorld, //solid volume
- 									   worldMat, //material
-							      "logicWorld"); //name
+ 					worldMat, //material
+					"logicWorld"); //name
 
 	physWorld = new G4PVPlacement(0, //rotation
- 		  G4ThreeVector(0., 0., 0.), //position coordinates
- 						 logicWorld, //logical volume
- 						"physWorld", //name
- 					              0, //logical mother volume
- 							  false, //no boolean operator
-								 13, //copy number = 13
-							  true); //check overlaps
+ 		  			G4ThreeVector(0., 0., 0.), //position coordinates
+ 					logicWorld, //logical volume
+ 					"physWorld", //name
+ 					0, //logical mother volume
+ 					false, //no boolean operator
+					13, //copy number = 13
+					true); //check overlaps
 	 
 	  
 	//Let's create the source plastic capsule 
 	solidSource = new G4Tubs("solidSource", //name
-								0*mm, 1*cm, //inner and outer radius
-									  2*mm, //height
-						   0*deg, 360*deg); //initial and final angle
+				0*mm, 1*cm, //inner and outer radius
+				2*mm, //height
+				0*deg, 360*deg); //initial and final angle
 
 	logicSource = new G4LogicalVolume(solidSource, //solid volume
-											 PMMA, //material
-								   "logicSource"); //name
+					PMMA, //material
+					"logicSource"); //name
 
 	logicSource->SetVisAttributes(G4VisAttributes(G4Colour(1, 0, 0))); //let's display it in red
 	
@@ -218,12 +213,12 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 	G4Transform3D transformDisk = (rotY)*(tranZ);
 	
 	physSource = new G4PVPlacement(transformDisk, //rotation and position coordinates
-						 logicSource, //logical volume
-		                "physSource", //name
-					      logicWorld, //logical mother volume
-					           false, //no boolean operator 
-								  11, //copy number = 11
-							   true); //check overlaps
+					logicSource, //logical volume
+		                	"physSource", //name
+					logicWorld, //logical mother volume
+					false, //no boolean operator 
+					11, //copy number = 11
+					true); //check overlaps
 
 	//Call constructor of the detector
 	if(is2DPET) 
@@ -242,14 +237,14 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
 
 void DetectorConstruction::ConstructSDandField()
 {
-  G4SDManager::GetSDMpointer()->SetVerboseLevel(1);
+  	G4SDManager::GetSDMpointer()->SetVerboseLevel(1);
 
-  // declare crystal as a MultiFunctionalDetector scorer
-  // NB: "crystal" is not the name of the physical volumes!!!
-  auto cryst = new G4MultiFunctionalDetector("crystal");
-  G4SDManager::GetSDMpointer()->AddNewDetector(cryst);
-  G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
-  cryst->RegisterPrimitive(primitiv1);
+  	// declare crystal as a MultiFunctionalDetector scorer
+  	// NB: "crystal" is not the name of the physical volumes!!!
+  	auto cryst = new G4MultiFunctionalDetector("crystal");
+ 	G4SDManager::GetSDMpointer()->AddNewDetector(cryst);
+  	G4VPrimitiveScorer* primitiv1 = new G4PSEnergyDeposit("edep");
+  	cryst->RegisterPrimitive(primitiv1);
 	logicScintillatorGATE->SetSensitiveDetector(cryst);
 	logicScintillatorSPCT->SetSensitiveDetector(cryst);
 
