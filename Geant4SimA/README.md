@@ -30,3 +30,4 @@
    root output0.root
    new TBrowser
    ```
+![Geometry Visualization](https://github.com/martelli7/Lab4_PET/blob/main/pictures/geometry_visualization.jpg)
